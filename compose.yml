@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./my-app:/app # ホストのカレントディレクトリ配下にmy-appフォルダをマウント
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true   # webpackの内部で使用されるファイル監視ライブラリであるwatchpackのポーリング機能を有効化（ホットリロード有効化）
+    working_dir: /app
+    command: npm run dev
