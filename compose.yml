@@ -9,6 +9,7 @@ services:
       - node_modules:/app/node_modules # Docker管理のnode_modulesをマウント（ホストのnode_modulesに依存しない）
     environment:
       - NODE_ENV=development
+      - WATCHPACK_POLLING=true   # webpackの内部で使用されるファイル監視ライブラリであるwatchpackのポーリング機能を有効化（ホットリロード有効化）
     command: npm run dev
 
 volumes:

@@ -97,7 +97,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-        <p className="text-2xl">ホットリロードするんかい？→したわ！</p>
+        <p className="text-2xl">Next16に更新したけどホットリロードするんかい？→キタコレ！</p>
       </footer>
     </div>
   );
