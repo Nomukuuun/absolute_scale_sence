@@ -1,104 +1,118 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Ruler, Weight, Sparkles } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/15">
+        <div className="absolute inset-0 bg-[url('/colorful-geometric-pattern.png')] opacity-10 bg-cover bg-center" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative container mx-auto px-4 py-16 md:py-24">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <div className="flex gap-6 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 blur-2xl bg-primary/40 rounded-full animate-pulse" />
+                <div className="relative bg-card rounded-3xl p-6 shadow-2xl border-4 border-primary/40">
+                  <Ruler className="w-16 h-16 md:w-20 md:h-20 text-primary" strokeWidth={2.5} />
+                </div>
+              </div>
+
+              <div className="relative">
+                <div
+                  className="absolute inset-0 blur-2xl bg-accent/40 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                />
+                <div className="relative bg-card rounded-3xl p-6 shadow-2xl border-4 border-secondary/40">
+                  <Weight className="w-16 h-16 md:w-20 md:h-20 text-secondary" strokeWidth={2.5} />
+                </div>
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-balance">
+                <span className="text-foreground">絶対スケール感覚</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+                あなたのスケール感覚を試してみよう！
+                <br />
+                直感を信じてレッツトライ！
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <Button
+              size="lg"
+              className="text-xl px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+            >
+              <Sparkles className="w-6 h-6 mr-2" />
+              プレイ
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-        <p className="text-2xl">Next16に更新したけどホットリロードするんかい？→キタコレ！</p>
-      </footer>
-    </div>
+      </section>
+
+      <section className="px-4 py-16">
+        <Card className="max-w-3xl mx-auto border-2 border-primary/30 shadow-xl">
+          <CardContent className="py-4 px-8">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="how-to-play" className="border-none">
+                <AccordionTrigger className="text-3xl font-bold text-center hover:no-underline">
+                  <span className="text-foreground w-full">遊び方</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-6 pt-6">
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                        1
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-bold text-foreground">画面に表示されるオブジェクトを見る</h3>
+                        <p className="text-muted-foreground">
+                          様々なサイズのオブジェクトが画面に表示されます。じっくり観察して、そのサイズ感を確認しましょう。
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold text-lg">
+                        2
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-bold text-foreground">サイズを予測する</h3>
+                        <p className="text-muted-foreground">
+                          オブジェクトの実際のサイズを頭の中で考えましょう。あなたの直感を信じて予測してください。
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center font-bold text-lg">
+                        3
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-bold text-foreground">答えを選択する</h3>
+                        <p className="text-muted-foreground">
+                          複数の選択肢から正しいサイズを選んでタップ！正解に近いほど高得点がもらえます。
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 text-center">
+                      <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 rounded-xl">
+                        さっそく始める
+                      </Button>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
+      </section>
+    </>
   );
 }
