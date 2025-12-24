@@ -1,15 +1,10 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { redirect } from 'next/navigation'
 
-export default function PlayPage() {
+export default function PlayIndexPage() {
+  // TODO: 今後問題数をランダムで取得するように拡張
+  // const MAX_QUESTION_NUMBER = 5
+  // const randomId = Math.floor(Math.random() * MAX_QUESTION_NUMBER) + 1
 
-  return (
-    <>
-      <Link href="/" className="max-w-xs">
-        <Button>
-          トップページへ戻る（終了する）
-        </Button>
-      </Link>
-    </>
-  );
+  const randomId = 1
+  redirect(`/play/${randomId}`)
 }
