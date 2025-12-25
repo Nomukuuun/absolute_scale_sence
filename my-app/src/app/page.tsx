@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -44,13 +45,15 @@ export default function Home() {
             </div>
 
             {/* CTA Button */}
-            <Button
-              size="lg"
-              className="text-xl px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
-            >
-              <Sparkles className="w-6 h-6 mr-2" />
-              プレイ
-            </Button>
+            <Link href="/play" className="max-w-xs">
+              <Button
+                size="lg"
+                className="text-xl px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+              >
+                <Sparkles className="w-6 h-6 mr-2" />
+                プレイ
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -60,7 +63,7 @@ export default function Home() {
           <CardContent className="py-4 px-8">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="how-to-play" className="border-none">
-                <AccordionTrigger className="text-3xl font-bold text-center hover:no-underline">
+                <AccordionTrigger className="flex items-center justify-center text-3xl font-bold text-center hover:no-underline">
                   <span className="text-foreground w-full">遊び方</span>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -102,9 +105,11 @@ export default function Home() {
                     </div>
 
                     <div className="pt-4 text-center">
-                      <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 rounded-xl">
-                        さっそく始める
-                      </Button>
+                      <Link href="/play" className="max-w-xs">
+                        <Button className="transition-all duration-300 hover:scale-105 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 rounded-xl">
+                          さっそく始める
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </AccordionContent>
