@@ -10,9 +10,9 @@ export default function PlayLayout({ children }: { children: React.ReactNode }) 
         <ProgressBar />
 
         {/* 中央：問題 */}
-        <main className="flex-1">
+        <div className="flex-1">
           {children}
-        </main>
+        </div>
 
         {/* 下部：操作ボタン */}
         <ControllButtons />
