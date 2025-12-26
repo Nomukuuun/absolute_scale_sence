@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from 'react'
 
 type PlayContextType = {
   currentIndex: number
-  total: number
+  totalQuestions: number
   next: () => void
   reset: () => void
 }
