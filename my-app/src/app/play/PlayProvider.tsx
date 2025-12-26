@@ -16,7 +16,7 @@ export function PlayProvider({ children }: { children: React.ReactNode }) {
   const totalQuestions = 5
   const [currentIndex, setCurrentIndex] = useState(1)
 
-  const next = () => setCurrentIndex((v) => v === totalQuestions || v + 1)
+  const next = () => setCurrentIndex((v) => Math.min(v + 1, totalQuestions))
 
   return (
     <PlayContext.Provider value={{ currentIndex, totalQuestions, next }}>
