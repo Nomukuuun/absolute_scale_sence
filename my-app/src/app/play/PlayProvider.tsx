@@ -6,7 +6,6 @@ type PlayContextType = {
   currentIndex: number
   totalQuestions: number
   next: () => void
-  reset: () => void
 }
 
 // 各問題ページで現在の問題数を管理するためのオブジェクト宣言
