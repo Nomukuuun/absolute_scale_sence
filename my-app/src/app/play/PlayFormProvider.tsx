@@ -4,11 +4,11 @@ import { useRouter } from 'next/navigation'
 import { usePlay } from './PlayProvider'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { answerFormSchema, AnswerForm } from './schemas/play-form'
+import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from './schemas/play-form'
 
 export  function PlayFormProvider({ children }: { children: React.ReactNode }) {
   // formの状態設定（初期化）
-  const methods = useForm<AnswerForm>({
+  const methods = useForm<AnswerFormInput>({
     resolver: zodResolver(answerFormSchema),
     mode: 'onChange',
     defaultValues: {
@@ -20,7 +20,7 @@ export  function PlayFormProvider({ children }: { children: React.ReactNode }) {
   const isLast = currentIndex === totalQuestions
 
   const router = useRouter()
-  const onSubmit = (data: AnswerForm) => {
+  const onSubmit = (data: AnswerFormOutput) => {
     console.log('answer:', data.answer)
     // TODO: ここで回答から点数を算出する処理を記述(useStateによるレイアウト内で管理か？)
     isLast ? router.replace('/result') : router.replace('/play')

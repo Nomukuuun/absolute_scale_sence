@@ -14,4 +14,6 @@ export const answerFormSchema = z.object({
   ),
 });
 
-export type AnswerForm = z.infer<typeof answerFormSchema>;
+// preprocessで型変換をしているため、inputとoutputの型を別で定義
+export type AnswerFormInput  = z.input<typeof answerFormSchema>;
+export type AnswerFormOutput = z.output<typeof answerFormSchema>;
