@@ -7,8 +7,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from './schemas/play-form'
 
 export  function PlayFormProvider({ children }: { children: React.ReactNode }) {
-  // formの状態設定（初期化）
-  const methods = useForm<AnswerFormInput>({
+  // formの初期化（zodで型変換を行うため、返還前と変換後で型を定義）
+  const methods = useForm<
+    AnswerFormInput,
+    any,
+    AnswerFormOutput
+  >({
     resolver: zodResolver(answerFormSchema),
     mode: 'onChange',
     defaultValues: {
