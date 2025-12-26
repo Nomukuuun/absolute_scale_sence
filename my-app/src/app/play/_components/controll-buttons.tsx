@@ -3,11 +3,11 @@
 import { useRouter } from 'next/navigation'
 import { usePlay } from '../PlayProvider'
 import { useFormContext } from 'react-hook-form'
-import { AnswerForm } from '@/app/play/schemas/play-form'
+import { AnswerFormInput } from '@/app/play/schemas/play-form'
 import { Button } from '@/components/ui/button'
 
 export default function ControlButtons() {
-  const { formState: { isDirty, isVaild } } = useFormContext<AnswerForm>()
+  const { formState: { isDirty, isVaild } } = useFormContext<AnswerFormInput>()
 
   const { totalQuestions, currentIndex, next } = usePlay()
   const isLast = currentIndex === totalQuestions

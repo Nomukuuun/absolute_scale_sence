@@ -1,10 +1,10 @@
 'use client'
 
 import { useFormContext } from 'react-hook-form'
-import { AnswerForm } from '@/app/play/schemas/play-form'
+import { AnswerFormInput } from '@/app/play/schemas/play-form'
 
 export default function AnswerField() {
-  const { register, formState: { errors } } = useFormContext<AnswerForm>()
+  const { register, formState: { errors } } = useFormContext<AnswerFormInput>()
 
   return (
     <div className="space-y-2">
