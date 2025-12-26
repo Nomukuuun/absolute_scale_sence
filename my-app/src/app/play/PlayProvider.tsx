@@ -4,23 +4,21 @@ import { createContext, useContext, useState } from 'react'
 
 type PlayContextType = {
   currentIndex: number
-  total: number
+  totalQuestions: number
   next: () => void
-  reset: () => void
 }
 
 // 各問題ページで現在の問題数を管理するためのオブジェクト宣言
 const PlayContext = createContext<PlayContextType | null>(null)
 
 export function PlayProvider({ children }: { children: React.ReactNode }) {
-  const total = 5
+  const totalQuestions = 5
   const [currentIndex, setCurrentIndex] = useState(1)
 
-  const next = () => setCurrentIndex((v) => v === total ? 1 : v + 1)
-  const reset = () => setCurrentIndex(1)
+  const next = () => setCurrentIndex((v) => Math.min(v + 1, totalQuestions))
 
   return (
-    <PlayContext.Provider value={{ currentIndex, total, next, reset }}>
+    <PlayContext.Provider value={{ currentIndex, totalQuestions, next }}>
       {children}
     </PlayContext.Provider>
   )
