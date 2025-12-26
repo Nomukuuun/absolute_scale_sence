@@ -26,6 +26,7 @@ export  function PlayFormProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const onSubmit = (data: AnswerFormOutput) => {
     console.log('answer:', data.answer)
+    // FIXME: formの値をリセットする処理を書く
     // TODO: ここで回答から点数を算出する処理を記述(useStateによるレイアウト内で管理か？)
     isLast ? router.replace('/result') : router.replace('/play')
   }
