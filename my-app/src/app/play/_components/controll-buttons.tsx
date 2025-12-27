@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { usePlay } from '../PlayProvider'
+import { usePlay } from '../providers/PlayProvider'
 import { useFormContext } from 'react-hook-form'
 import { AnswerFormInput } from '@/app/play/schemas/play-form'
 import { Button } from '@/components/ui/button'
