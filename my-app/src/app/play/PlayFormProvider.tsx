@@ -6,7 +6,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from './schemas/play-form'
 
-export  function PlayFormProvider({ children }: { children: React.ReactNode }) {
+export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   // formの初期化（zodで型変換を行うため、返還前と変換後で型を定義）
   const methods = useForm<
     AnswerFormInput,
