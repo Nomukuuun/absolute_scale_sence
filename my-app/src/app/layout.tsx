@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${kiwiMaru.className} antialiased flex min-h-screen flex-col items-center justify-between bg-white text-black`}>
-        <main className="container mx-auto grow">
+      <body className={`${kiwiMaru.className} antialiased w-full min-h-screen flex flex-col items-center justify-between bg-white text-black`}>
+        <main className="max-w-3xl md:max-w-5xl mx-auto grow">
           {children}
         </main>
       </body>

@@ -9,7 +9,7 @@ export default function ProgressBar() {
   console.log(currentIndex, totalQuestions, progress)
 
   return (
-  <div className="w-full flex items-center justify-center space-x-5">
+  <div className="w-full flex items-center justify-center space-x-6 py-6">
     <Progress value={ progress } className="w-3/5" />
     <span className="text-sm font-medium tabular-nums">
       { currentIndex } / { totalQuestions }
