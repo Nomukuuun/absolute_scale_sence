@@ -12,7 +12,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ quest
     <div className="flex flex-col">
       <CurrentQuestionNumber />
       <div className="relative rounded h-[300px] w-auto bg-white">
-        <Image src={`/questions_img/${question.id}.png`} alt="question_image" fill={true} />
+        <Image src={`/questions_img/${questionId}.png`} alt="question_image" fill={true} />
       </div>
       { question?.supplement && <div className="text-gray-400">{`※ ${question.supplement}`}</div> }
       <div className="flex justify-between space-x-5 py-5">

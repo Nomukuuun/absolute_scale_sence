@@ -19,7 +19,7 @@ export default function AnswerField({ unit }: string) {
           type="number"
           min="0"
           className="w-1/2 border rounded p-2"
-          placeholder="答えを数字で入力"
+          placeholder="整数で入力"
         />
         <div>{unit}</div>
       </div>

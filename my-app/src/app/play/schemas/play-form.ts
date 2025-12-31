@@ -6,6 +6,7 @@ export const answerFormSchema = z.object({
     (v) => (Number.isNaN(v) ? undefined : v),
     z
       .number()
+      .int('整数で入力してください')
       .gte(0, { message: '0以上の数字を入力してください' })
       .optional()
       .refine((v) => v !== undefined, {
