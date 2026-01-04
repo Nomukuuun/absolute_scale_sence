@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "question": {
+      "target": "鉛筆",
+      "scale": "長さ",
+      "unit": "cm",
+      "supplement": "消しゴムの長さは考慮しません。"
+    },
+    "answer": "17"
+  }
+]

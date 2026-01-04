@@ -3,7 +3,7 @@
 import { useFormContext } from 'react-hook-form'
 import { AnswerFormInput } from '@/app/play/schemas/play-form'
 
-export default function AnswerField() {
+export function AnswerField({ unit }: { unit: string } ) {
   const { register, formState: { errors } } = useFormContext<AnswerFormInput>()
 
   return (
@@ -18,10 +18,10 @@ export default function AnswerField() {
           }
           type="number"
           min="0"
-          className="w-2/3 border rounded p-2"
-          placeholder="答えを数字で入力"
+          className="w-1/2 border rounded p-2"
+          placeholder="整数で入力"
         />
-        <div>単位</div>
+        <div>{unit}</div>
       </div>
 
       {errors.answer && (

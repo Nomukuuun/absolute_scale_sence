@@ -4,5 +4,5 @@ import { usePlay } from '../../providers/PlayProvider'
 
 export function CurrentQuestionNumber() {
   const { currentIndex } = usePlay()
-  return <h2 className="text-xl font-bold">問題 {currentIndex}</h2>
+  return <h2 className="text-xl font-bold pt-6">問題 {currentIndex}</h2>
 }

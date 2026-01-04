@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 export default function ControlButtons() {
   const { formState: { isDirty, isValid } } = useFormContext<AnswerFormInput>()
 
-  const { totalQuestions, currentIndex, next } = usePlay()
+  const { totalQuestions, currentIndex } = usePlay()
   const isLast = currentIndex === totalQuestions
 
   const router = useRouter()
@@ -21,7 +21,7 @@ export default function ControlButtons() {
         トップへ戻る
       </Button>
 
-      <Button type="submit" disabled={!isDirty || !isValid} onClick={next} className="basis-1/2">
+      <Button type="submit" disabled={!isDirty || !isValid} className="basis-1/2">
         { isLast ? "結果を見る" : "次の問題へ" }
       </Button>
     </div>
