@@ -1,7 +1,6 @@
 import questions from "@/../public/data/questions.json"
 
 type Question = {
-  id: string
   target: string
   scale: string
   unit: string
@@ -18,9 +17,9 @@ export function getQuestion(questionId: string): Question | undefined {
 }
 
 export function getAnswer(questionId: string): string | undefined {
-  const answer = questions.find((q) => q.id === questionId)
-  if (answer) {
-    return answer["answer"]
+  const question = questions.find((q) => q.id === questionId)
+  if (question) {
+    return question["answer"]
   } else {
     return undefined
   }
