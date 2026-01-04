@@ -3,7 +3,7 @@
 import { useFormContext } from 'react-hook-form'
 import { AnswerFormInput } from '@/app/play/schemas/play-form'
 
-export default function AnswerField({ unit }: { unit: string } ) {
+export function AnswerField({ unit }: { unit: string } ) {
   const { register, formState: { errors } } = useFormContext<AnswerFormInput>()
 
   return (

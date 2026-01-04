@@ -9,18 +9,18 @@ type Question = {
 }
 
 export function getQuestion(questionId: string): Question | undefined {
-  const question = questions.find((q) => q.id === questionId)["question"]
+  const question = questions.find((q) => q.id === questionId)
   if (question) {
-    return question
+    return question["question"]
   } else {
     return undefined
   }
 }
 
 export function getAnswer(questionId: string): string | undefined {
-  const answer = questions.find((q) => q.id === questionId)["answer"]
+  const answer = questions.find((q) => q.id === questionId)
   if (answer) {
-    return answer
+    return answer["answer"]
   } else {
     return undefined
   }
