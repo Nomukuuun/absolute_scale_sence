@@ -24,14 +24,13 @@ export function PlayProvider({ children }: { children: React.ReactNode }) {
   )
 }
 
-// スコア算出用のカスタムフック（フォームのsubmitアクションで実行）
+// スコア算出用のカスタムフック（FormPloviderのonSubmitアクションで実行）
 export function useCalculateScore() {
   const [score, setScore] = useState<number>(0)
 
-  const calculateScore = (answer: string, questionId: string) => {
-    console.log('更新前score:', score)
+  const calculateScore = (answer: number, questionId: string) => {
     // ユーザー入力は「10.」のように小数点を混じらせた回答ができてしまうため小数点以下を排除
-    const user_ans = Math.trunc(Number(answer))
+    const user_ans = Math.trunc(answer)
     const correct_ans = Number(getAnswer(questionId))
     // 解答との乖離を絶対値で算出（最終スコア値が大きいほど、評価が低くなる）
     setScore((v) => v + Math.abs(correct_ans - user_ans))
@@ -43,6 +42,6 @@ export function useCalculateScore() {
 // PlayContextを利用するためのカスタムフック
 export const usePlay = () => {
   const ctx = useContext(PlayContext)
-  if (!ctx) throw new Error('usePlay must be used within PlayProvider')
+  if (!ctx) throw new Error('usePlayはPlayProvider配下で使う必要があります')
   return ctx
 }

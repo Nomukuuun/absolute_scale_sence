@@ -29,11 +29,11 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   const isLast = currentIndex === totalQuestions
 
   const router = useRouter()
-  const onSubmit = (data: AnswerFormOutput) => {
+  const onSubmit = (data: { answer: number }) => {
     console.log('answer:', data.answer)
     console.log('questionId:', questionId)
-    next()
-    reset()
+    next()  // 回答問題数をインクリメント
+    reset() // フォーム状態をリセット
     calculateScore(data.answer, questionId)
     console.log('更新前score:', score)
     isLast ? router.replace('/result') : router.replace('/play')
