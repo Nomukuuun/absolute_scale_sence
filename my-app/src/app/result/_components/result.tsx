@@ -4,7 +4,7 @@ import { useScore } from '@/app/ScoreProvider'
 import { getResult } from '@/lib/result/get-result'
 
 export function Result() {
-  const { score, reset } = useScore()
+  const { score } = useScore()
   const result = getResult(score)
 
   return (
