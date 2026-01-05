@@ -1,8 +1,8 @@
 'use client'
 
 import { useRouter, useParams } from 'next/navigation'
-import { usePlay, useCalculateScore } from './PlayProvider'
-import { getAnswer } from '@/lib/play/get-question'
+import { usePlay } from './PlayProvider'
+import { useScore } from '@/app/ScoreProvider'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from '../schemas/play-form'
@@ -22,21 +22,20 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   })
 
   // submit時に使用する状態
-  const reset = methods.reset
-  const { score, calculateScore } = useCalculateScore()
   const { questionId } = useParams<{ questionId: string }>()
   const { currentIndex, totalQuestions, next } = usePlay()
   const isLast = currentIndex === totalQuestions
-
+  const { score, calculateScore } = useScore()
   const router = useRouter()
+
   const onSubmit = (data: AnswerFormOutput) => {
     // バリデーションを通過していることが確実であるため、answerの型からundefinedを無視する
     const answer = data.answer!
     console.log('answer:', data.answer)
     console.log('questionId:', questionId)
-    next()  // 回答問題数をインクリメント
-    reset() // フォーム状態をリセット
-    calculateScore(answer, questionId)
+    next()          // 回答問題数をインクリメント
+    methods.reset() // フォーム状態をリセット
+    calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     console.log('更新前score:', score)
     isLast ? router.replace('/result') : router.replace('/play')
   }
