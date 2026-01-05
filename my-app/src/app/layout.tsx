@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kiwi_Maru } from "next/font/google";
 import "./globals.css";
+import { ScoreProvider } from "./ScoreProvider"
 
 const kiwiMaru = Kiwi_Maru({
   weight: "400",
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${kiwiMaru.className} antialiased w-full min-h-screen flex flex-col items-center justify-between bg-white text-black`}>
         <main className="max-w-3xl md:max-w-5xl mx-auto grow">
-          {children}
+          <ScoreProvider>
+            {children}
+          </ScoreProvider>
         </main>
       </body>
     </html>
