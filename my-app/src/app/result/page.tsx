@@ -1,14 +1,12 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Result } from "./_components/result"
+import { ReturnTopButton } from "./_components/return-top-button"
 
 export default function ResultPage() {
 
   return (
-    <div className="flex flex-col space-y-6 p-10">
-      <div>結果発表～～～～～～！！！！</div>
-      <Link href="/">
-        <Button>トップに戻る</Button>
-      </Link>
+    <div className="flex flex-col space-y-6 py-10">
+      <Result />
+      <ReturnTopButton />
     </div>
   )
 }

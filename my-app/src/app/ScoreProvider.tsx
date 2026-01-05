@@ -22,6 +22,7 @@ export function ScoreProvider({ children }: { children: React.ReactNode }) {
     setScore((v) => v + Math.abs(correct_ans - user_ans))
   }
   const resetScore = () => setScore(0)
+  console.log('現在のscore:', score)
 
   return (
     <ScoreContext.Provider value={{ score, calculateScore, resetScore }}>
