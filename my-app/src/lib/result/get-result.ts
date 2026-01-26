@@ -1,6 +1,7 @@
-export type ScoreRank = {
+// labelは型引数を省略するとstring型、stringの部分型を指定すればその型になる
+type ScoreRank<L extends string = string> = {
   min: number
-  label: string
+  label: L
   message: string
 }
 
@@ -15,6 +16,6 @@ const SCORE_RANKS = [
 
 export type ScoreRankLabel = typeof SCORE_RANKS[number]["label"]
 
-export function getResult(score: number):ScoreRank {
+export function getResult(score: number): ScoreRank<ScoreRankLabel> {
   return SCORE_RANKS.find(rank => score >= rank.min)!
 }

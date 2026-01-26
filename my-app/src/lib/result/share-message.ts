@@ -1,4 +1,4 @@
-import type { ScoreRank, ScoreRankLabel } from "./get-result";
+import type { ScoreRankLabel } from "./get-result";
 
 export const ShareMessage: Record<ScoreRankLabel, string> = {
   "ガバガバ...": "メジャーとスケール持ち歩きます...",

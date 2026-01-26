@@ -4,6 +4,7 @@ import { TwitterShareButton, TwitterIcon } from 'next-share'
 import { useMemo } from 'react'
 import { useScore } from '@/app/ScoreProvider'
 import { getResult } from '@/lib/result/get-result' 
+import type { ScoreRankLabel } from '@/lib/result/get-result' 
 import { ShareMessage } from '@/lib/result/share-message' 
 
 export function ShareToXButton() {
@@ -13,11 +14,11 @@ export function ShareToXButton() {
 
   // スコアに基づいてシェアテキストを生成
   const { score } = useScore()
-  const result = useMemo(() => getResult(score), [score])
+  const label: ScoreRankLabel = useMemo(() => getResult(score).label, [score])
   const shareText = useMemo(
-    () => 
-      `私の絶対スケール感は「${result.label}」でした！\n${ShareMessage[result.label]}\nあなたのスケール感を調べてみよう！`
-    , [result])
+    () => {
+      return `私の絶対スケール感は「${label}」でした！\n${ShareMessage[label]}\nあなたのスケール感を調べてみよう！`
+    }, [label])
   
   return (
     <TwitterShareButton
