@@ -1,7 +1,7 @@
 'use client'
 
 import { TwitterShareButton, TwitterIcon } from 'next-share'
-import { useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useScore } from '@/app/ScoreProvider'
 import { getResult } from '@/lib/result/get-result' 
 import type { ScoreRankLabel } from '@/lib/result/get-result' 
@@ -9,9 +9,15 @@ import { ShareMessage } from '@/lib/result/share-message'
 
 export function ShareToXButton() {
   // 絶対パスでルートを取得し、シェアURLを生成
-  const rootPath =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (typeof window !== "undefined" ? window.location.origin : "/"); // SSRのエラー回避対応
+  const basePath = process.env.NEXT_PUBLIC_SITE_URL
+  console.log('basePath:', basePath)
+  const [rootPath, setRootPath] = useState(basePath)
+  // windowオブジェクトはクライアントサイドのみで利用できるため、SSR時に実行しないようuseEffectを使用
+  useEffect(() => {
+    if (!basePath) {
+      setRootPath(window.location.origin);
+    }
+  }, []);
   const shareUrl = new URL('/', rootPath).toString()
 
   // スコアに基づいてシェアテキストを生成
