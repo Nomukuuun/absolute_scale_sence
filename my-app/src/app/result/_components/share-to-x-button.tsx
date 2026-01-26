@@ -9,7 +9,9 @@ import { ShareMessage } from '@/lib/result/share-message'
 
 export function ShareToXButton() {
   // 絶対パスでルートを取得し、シェアURLを生成
-  const rootPath = process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin
+  const rootPath =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (typeof window !== "undefined" ? window.location.origin : "/"); // SSRのエラー回避対応
   const shareUrl = new URL('/', rootPath).toString()
 
   // スコアに基づいてシェアテキストを生成
@@ -19,7 +21,7 @@ export function ShareToXButton() {
     () => {
       return `私の絶対スケール感は「${label}」でした！\n${ShareMessage[label]}\nあなたのスケール感を調べてみよう！`
     }, [label])
-  
+
   return (
     <TwitterShareButton
       className="flex items-center gap-2"
