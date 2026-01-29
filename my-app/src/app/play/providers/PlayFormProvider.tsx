@@ -1,6 +1,5 @@
 'use client'
 
-import { useCallback } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { usePlay } from './PlayProvider'
 import { useScore } from '@/app/ScoreProvider'
@@ -24,12 +23,11 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
 
   // submit時に使用する状態
   const { questionId } = useParams<{ questionId: string }>()
-  const { currentIndex, totalQuestions, next } = usePlay()
-  const isLast = currentIndex === totalQuestions
+  const { currentIndex, totalQuestions, isLast, next } = usePlay()
   const { score, calculateScore } = useScore()
   const router = useRouter()
 
-  const onSubmit = useCallback((data: AnswerFormOutput) => {
+  const onSubmit = (data: AnswerFormOutput) => {
     // バリデーションを通過していることが確実であるため、answerの型からundefinedを無視する
     const answer = data.answer!
     console.log('answer:', data.answer)
@@ -38,8 +36,9 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
     next()          // 回答問題数をインクリメント
     methods.reset() // フォーム状態をリセット
     console.log('更新前score:', score)
+    console.log('isLast:', isLast)
     isLast ? router.replace('/result') : router.replace('/play')
-  }, [])
+  }
 
   return (
     <FormProvider {...methods}>
