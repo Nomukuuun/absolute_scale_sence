@@ -1,5 +1,6 @@
 'use client'
 
+import { useCallback } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { usePlay } from './PlayProvider'
 import { useScore } from '@/app/ScoreProvider'
@@ -28,17 +29,17 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   const { score, calculateScore } = useScore()
   const router = useRouter()
 
-  const onSubmit = (data: AnswerFormOutput) => {
+  const onSubmit = useCallback((data: AnswerFormOutput) => {
     // バリデーションを通過していることが確実であるため、answerの型からundefinedを無視する
     const answer = data.answer!
     console.log('answer:', data.answer)
     console.log('questionId:', questionId)
+    calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     next()          // 回答問題数をインクリメント
     methods.reset() // フォーム状態をリセット
-    calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     console.log('更新前score:', score)
     isLast ? router.replace('/result') : router.replace('/play')
-  }
+  }, [])
 
   return (
     <FormProvider {...methods}>
