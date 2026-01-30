@@ -1,0 +1,8 @@
+{
+  "name": "absolute-scale-sense",
+  // devcontainer.json は .devcontainer/ 配下なので、1つ上がプロジェクトルート
+  "dockerComposeFile": ["../compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "overrideCommand": false
+}
