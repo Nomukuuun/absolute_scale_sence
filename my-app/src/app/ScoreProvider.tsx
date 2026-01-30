@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 import { getAnswer } from '@/lib/play/get-question'
 
 type ScoreContextType = {
@@ -14,15 +14,15 @@ const ScoreContext = createContext<ScoreContextType | null>(null)
 
 export function ScoreProvider({ children }: { children: React.ReactNode }) {
   const [score, setScore] = useState<number>(0)
-  const calculateScore = (answer: number, questionId: string) => {
+  const calculateScore = useCallback((answer: number, questionId: string) => {
     // ユーザー入力は「10.」のように小数点を混じらせた回答ができてしまうため小数点以下を排除
     const user_ans = Math.trunc(answer)
     const correct_ans = Number(getAnswer(questionId) || "0")
     // 解答との乖離を絶対値で算出（最終スコア値が大きいほど、評価が低くなる）
     setScore((v) => v + Math.abs(correct_ans - user_ans))
-  }
+  }, [])
   const resetScore = () => setScore(0)
-  console.log('現在のscore:', score)
+  useEffect(() => console.log('現在のscore:', score), [score])
 
   return (
     <ScoreContext.Provider value={{ score, calculateScore, resetScore }}>

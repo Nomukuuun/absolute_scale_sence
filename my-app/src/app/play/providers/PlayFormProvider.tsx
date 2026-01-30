@@ -23,8 +23,7 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
 
   // submit時に使用する状態
   const { questionId } = useParams<{ questionId: string }>()
-  const { currentIndex, totalQuestions, next } = usePlay()
-  const isLast = currentIndex === totalQuestions
+  const { currentIndex, totalQuestions, isLast, next } = usePlay()
   const { score, calculateScore } = useScore()
   const router = useRouter()
 
@@ -33,10 +32,11 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
     const answer = data.answer!
     console.log('answer:', data.answer)
     console.log('questionId:', questionId)
+    calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     next()          // 回答問題数をインクリメント
     methods.reset() // フォーム状態をリセット
-    calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     console.log('更新前score:', score)
+    console.log('isLast:', isLast)
     isLast ? router.replace('/result') : router.replace('/play')
   }
 

@@ -1,5 +1,6 @@
 'use client'
 
+import { useScore } from '@/app/ScoreProvider'
 import { useRouter } from 'next/navigation'
 import { usePlay } from '../providers/PlayProvider'
 import { useFormContext } from 'react-hook-form'
@@ -9,11 +10,14 @@ import { Button } from '@/components/ui/button'
 export default function ControlButtons() {
   const { formState: { isDirty, isValid } } = useFormContext<AnswerFormInput>()
 
-  const { totalQuestions, currentIndex } = usePlay()
-  const isLast = currentIndex === totalQuestions
+  const { totalQuestions, currentIndex, isLast } = usePlay()
 
   const router = useRouter()
-  const redirectToTop = () => { router.replace('/') }
+  const { resetScore } = useScore()
+  const redirectToTop = () => { 
+    router.replace('/')
+    resetScore()
+  }
 
   return (
     <div className="flex items-center justify-center space-x-5 p-5">
