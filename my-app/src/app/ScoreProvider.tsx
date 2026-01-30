@@ -21,7 +21,7 @@ export function ScoreProvider({ children }: { children: React.ReactNode }) {
     // 解答との乖離を絶対値で算出（最終スコア値が大きいほど、評価が低くなる）
     setScore((v) => v + Math.abs(correct_ans - user_ans))
   }, [])
-  const resetScore = () => setScore(0)
+  const resetScore = useCallback(() => setScore(0), [])
   useEffect(() => console.log('現在のscore:', score), [score])
 
   return (
