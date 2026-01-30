@@ -23,7 +23,7 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
 
   // submit時に使用する状態
   const { questionId } = useParams<{ questionId: string }>()
-  const { currentIndex, totalQuestions, isLast, next } = usePlay()
+  const { isLast, next } = usePlay()
   const { score, calculateScore } = useScore()
   const router = useRouter()
 
