@@ -1,6 +1,7 @@
 import questions from "@/../public/data/questions.json"
 
 type Question = {
+  pixabay_id: string
   target: string
   scale: string
   unit: string
