@@ -1,7 +1,6 @@
 'use client'
 
 import { createContext, useContext, useState, useCallback } from 'react'
-import { getAnswer } from '@/lib/play/get-question'
 
 type PlayContextType = {
   currentIndex: number

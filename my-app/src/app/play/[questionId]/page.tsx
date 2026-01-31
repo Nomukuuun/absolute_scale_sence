@@ -3,6 +3,8 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { CurrentQuestionNumber } from "./_components/current-question-number"
 import { AnswerField } from "./_components/answer-field"
+import { Suspense } from "react"
+import { ImageSkeleton } from "./_components/image-skeleton"
 
 export default async function QuestionPage({ params }: { params: Promise<{ questionId: string }> }) {
   const { questionId } = await params
@@ -18,7 +20,9 @@ export default async function QuestionPage({ params }: { params: Promise<{ quest
     <div className="flex flex-col">
       <CurrentQuestionNumber />
       <div className="relative rounded h-[300px] w-auto bg-white">
-        <Image src={`/questions_img/${questionId}.png`} alt="question_image" fill={true} />
+        <Suspense fallback={<ImageSkeleton />}>
+          <Image src={`/questions_img/${questionId}.png`} alt="question_image" fill={true} />
+        </Suspense>
       </div>
       { question?.supplement && <div className="text-gray-400">{`※ ${question.supplement}`}</div> }
       <div className="flex justify-between space-x-5 py-5">
