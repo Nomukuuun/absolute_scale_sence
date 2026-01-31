@@ -20,7 +20,7 @@ export default function ControlButtons() {
   }
 
   return (
-    <div className="flex items-center justify-center space-x-5 p-5">
+    <div className="flex items-center justify-center space-x-5 px-4 py-8">
       <Button type="button" onClick={redirectToTop} className="basis-1/2">
         トップへ戻る
       </Button>

@@ -30,10 +30,15 @@ export default async function QuestionPage({ params }: { params: Promise<{ quest
           />
         </Suspense>
       </div>
-      { question?.supplement && <div className="text-gray-400">{`※ ${question.supplement}`}</div> }
       <div className="flex justify-between space-x-5 py-5">
         <div className="py-2">{question.target}の{question.scale}は？</div>
         <AnswerField unit={question.unit} />
+      </div>
+      { question?.supplement && <div className="pt-10 text-gray-400">{`※ ${question.supplement}`}</div> }
+      <div className="text-gray-400">
+        ※ 画像は
+        <a href={hit.pageURL} target="_blank" rel="noreferrer" className="underline"> Pixabay </a>
+        より取得しています。
       </div>
     </div>
   )
