@@ -3,11 +3,110 @@
     "id": "1",
     "question": {
       "pixabay_id": "2679000",
-      "target": "鉛筆",
+      "target": "鉛筆１本",
       "scale": "長さ",
       "unit": "cm",
       "supplement": "新品のまだ削られていない鉛筆を想像してください。"
     },
     "answer": "17"
+  },
+  {
+    "id": "2",
+    "question": {
+      "pixabay_id": "1841216",
+      "target": "タバコ１箱",
+      "scale": "重さ",
+      "unit": "g",
+      "supplement": "未開封の紙巻きたばこ１箱で想像してください。"
+    },
+    "answer": "25"
+  },
+  {
+    "id": "3",
+    "question": {
+      "pixabay_id": "495733",
+      "target": "ＣＤ",
+      "scale": "直径",
+      "unit": "cm",
+      "supplement": "短冊型ではなく、一般的な音楽ＣＤを想像してください。"
+    },
+    "answer": "12"
+  },
+  {
+    "id": "4",
+    "question": {
+      "pixabay_id": "495733",
+      "target": "ＣＤの中心にある穴",
+      "scale": "直径",
+      "unit": "mm",
+      "supplement": "ＣＤの直径ではないので注意してください。"
+    },
+    "answer": "15"
+  },
+  {
+    "id": "5",
+    "question": {
+      "pixabay_id": "2907724",
+      "target": "白米１合",
+      "scale": "重さ",
+      "unit": "g",
+      "supplement": "炊飯する前の白米１合を想像してください。"
+    },
+    "answer": "150"
+  },
+  {
+    "id": "6",
+    "question": {
+      "pixabay_id": "256283",
+      "target": "５００円硬貨",
+      "scale": "重さ（小数点以下切り捨て）",
+      "unit": "g",
+      "supplement": "日本の５００円硬貨を想像してください。"
+    },
+    "answer": "7"
+  },
+  {
+    "id": "7",
+    "question": {
+      "pixabay_id": "256283",
+      "target": "５００円硬貨",
+      "scale": "直径（小数点以下切り捨て）",
+      "unit": "mm",
+      "supplement": "日本の５００円硬貨を想像してください。"
+    },
+    "answer": "26"
+  },
+  {
+    "id": "8",
+    "question": {
+      "pixabay_id": "1201257",
+      "target": "トランプカードの",
+      "scale": "縦の長さ",
+      "unit": "mm",
+      "supplement": "世界標準とされるポーカーサイズで想像してください。"
+    },
+    "answer": "89"
+  },
+  {
+    "id": "9",
+    "question": {
+      "pixabay_id": "1201257",
+      "target": "トランプカードの",
+      "scale": "横の長さ",
+      "unit": "mm",
+      "supplement": "世界標準とされるポーカーサイズで想像してください。"
+    },
+    "answer": "63"
+  },
+  {
+    "id": "10",
+    "question": {
+      "pixabay_id": "4275085",
+      "target": "Ａ４用紙の長編",
+      "scale": "長さ",
+      "unit": "mm",
+      "supplement": "単位がmmなことに注意してください。"
+    },
+    "answer": "297"
   }
 ]
