@@ -80,7 +80,7 @@
     "id": "8",
     "question": {
       "pixabay_id": "1201257",
-      "target": "トランプカードの",
+      "target": "トランプカード",
       "scale": "縦の長さ",
       "unit": "mm",
       "supplement": "世界標準とされるポーカーサイズで想像してください。"
@@ -91,7 +91,7 @@
     "id": "9",
     "question": {
       "pixabay_id": "1201257",
-      "target": "トランプカードの",
+      "target": "トランプカード",
       "scale": "横の長さ",
       "unit": "mm",
       "supplement": "世界標準とされるポーカーサイズで想像してください。"
@@ -102,10 +102,10 @@
     "id": "10",
     "question": {
       "pixabay_id": "4275085",
-      "target": "Ａ４用紙の長編",
+      "target": "Ａ４用紙の長辺",
       "scale": "長さ",
       "unit": "mm",
-      "supplement": "単位がmmなことに注意してください。"
+      "supplement": "単位に注意してください。"
     },
     "answer": "297"
   }
