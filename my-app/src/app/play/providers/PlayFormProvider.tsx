@@ -37,7 +37,12 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
     methods.reset() // フォーム状態をリセット
     console.log('更新前score:', score)
     console.log('isLast:', isLast)
-    isLast ? router.replace('/result') : router.replace('/play')
+    if (isLast) {
+      router.replace('/result')
+    } else {
+      router.refresh() // Router Cacheをクリア
+      router.replace('/play')
+    }
   }
 
   return (

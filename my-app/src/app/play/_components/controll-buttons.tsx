@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 export default function ControlButtons() {
   const { formState: { isDirty, isValid } } = useFormContext<AnswerFormInput>()
 
-  const { totalQuestions, currentIndex, isLast } = usePlay()
+  const { isLast } = usePlay()
 
   const router = useRouter()
   const { resetScore } = useScore()
