@@ -8,8 +8,8 @@ export function ReturnTopButton() {
   const router = useRouter()
   const { resetScore } = useScore()
   const initialize = () => {
-    resetScore()
     router.replace('/')
+    resetScore()
   }
 
   return (
