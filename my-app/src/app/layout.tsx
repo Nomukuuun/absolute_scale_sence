@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${kiwiMaru.className} antialiased w-full min-h-screen flex flex-col items-center justify-between bg-white text-black`}>
-        <main className="max-w-3xl md:max-w-5xl mx-auto grow">
+        <main className="w-full max-w-md md:max-w-xl mx-auto px-4 grow">
           <ScoreProvider>
             {children}
           </ScoreProvider>

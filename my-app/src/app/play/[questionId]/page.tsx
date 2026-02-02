@@ -21,20 +21,21 @@ export default async function QuestionPage({ params }: { params: Promise<{ quest
   return (
     <div className="flex flex-col">
       <CurrentQuestionNumber />
-      <div className="relative rounded h-[300px] w-auto bg-white">
-        <Suspense fallback={<ImageSkeleton />}>
+      <Suspense fallback={<ImageSkeleton />}>
+        <div className="relative rounded h-[300px] md:h-[390px] w-auto bg-white">
           <Image
             src={hit.largeImageURL}
             alt={hit.tags}
-            fill={true}
+            sizes="(max-width: 768px) 100vw"
+            fill
           />
-        </Suspense>
-      </div>
-      <div className="flex justify-between space-x-5 py-5">
-        <div className="py-2">{question.target}の{question.scale}は？</div>
+        </div>
+      </Suspense>
+      <div className="flex space-x-6 py-6">
+        <div className="basis-2/3 py-2">{question.target}の{question.scale}は？</div>
         <AnswerField unit={question.unit} />
       </div>
-      { question?.supplement && <div className="pt-10 text-gray-400">{`※ ${question.supplement}`}</div> }
+      { question?.supplement && <div className="text-gray-400">{`※ ${question.supplement}`}</div> }
       <div className="text-gray-400">
         ※ 画像は
         <a href={hit.pageURL} target="_blank" rel="noreferrer" className="underline"> Pixabay </a>
