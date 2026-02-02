@@ -7,7 +7,7 @@ export function AnswerField({ unit }: { unit: string } ) {
   const { register, formState: { errors } } = useFormContext<AnswerFormInput>()
 
   return (
-    <div className="space-y-2">
+    <div className="basis-1/3 py-2">
       <div className="flex items-center space-x-2">
         <input
           {...register('answer',
@@ -19,7 +19,7 @@ export function AnswerField({ unit }: { unit: string } ) {
           type="number"
           min="0"
           className="w-1/2 border rounded p-2"
-          placeholder="整数で入力"
+          placeholder="整数"
         />
         <div>{unit}</div>
       </div>
