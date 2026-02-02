@@ -5,7 +5,10 @@ import { Button } from '@/components/ui/button'
 
 export default function NotFound() {
   const router = useRouter()
-  const reload = () => router.replace('/play')
+  const reload = () => {
+    router.refresh()
+    router.replace('/play')
+  }
 
   return (
     <div className="flex flex-col space-y-6 p-10 text-center">
