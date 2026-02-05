@@ -6,27 +6,25 @@ import { Ruler, Weight, Sparkles } from "lucide-react"
 
 export default function Home() {
   return (
-    <>
+    <div className="relative w-screen ml-[50%] -translate-x-[50%] min-h-screen bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/15">
+      <div className="absolute inset-0 pointer-events-none bg-[url('/colorful-geometric-pattern.png')] opacity-10 bg-cover bg-center" />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/15">
-        <div className="absolute inset-0 bg-[url('/colorful-geometric-pattern.png')] opacity-10 bg-cover bg-center" />
-
+      <section>
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="flex flex-col items-center text-center space-y-8">
-            <div className="flex gap-6 items-center">
+
+            {/* Icons */}
+            <div className="flex gap-10 items-center">
               <div className="relative">
                 <div className="absolute inset-0 blur-2xl bg-primary/40 rounded-full animate-pulse" />
-                <div className="relative bg-card rounded-3xl p-6 shadow-2xl border-4 border-primary/40">
+                <div className="relative bg-card animate-bounce rounded-3xl p-6 shadow-2xl border-4 border-primary/40">
                   <Ruler className="w-16 h-16 md:w-20 md:h-20 text-primary" strokeWidth={2.5} />
                 </div>
               </div>
 
               <div className="relative">
-                <div
-                  className="absolute inset-0 blur-2xl bg-accent/40 rounded-full animate-pulse"
-                  style={{ animationDelay: "0.5s" }}
-                />
-                <div className="relative bg-card rounded-3xl p-6 shadow-2xl border-4 border-secondary/40">
+                <div className="absolute inset-0 blur-2xl bg-accent/40 rounded-full animate-pulse" />
+                <div className="relative bg-card animate-bounce rounded-3xl p-6 shadow-2xl border-4 border-secondary/40">
                   <Weight className="w-16 h-16 md:w-20 md:h-20 text-secondary" strokeWidth={2.5} />
                 </div>
               </div>
@@ -45,12 +43,12 @@ export default function Home() {
             </div>
 
             {/* CTA Button */}
-            <Link href="/play" className="max-w-xs">
+            <Link href="/play" className="max-w-md">
               <Button
                 size="lg"
-                className="text-xl px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                className="text-xl md:text-2xl px-8 md:px-10 py-6 md:py-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
               >
-                <Sparkles className="w-6 h-6 mr-2" />
+                <Sparkles className="size-6 mr-2 md:mr-4" />
                 プレイ
               </Button>
             </Link>
@@ -58,7 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16">
+      <section className="px-4 pb-8">
         <Card className="max-w-3xl mx-auto border-2 border-primary/30 shadow-xl">
           <CardContent className="py-4 px-8">
             <Accordion type="single" collapsible className="w-full">
@@ -73,9 +71,9 @@ export default function Home() {
                         1
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-lg font-bold text-foreground">画面に表示されるオブジェクトを見る</h3>
+                        <h3 className="text-lg font-bold text-foreground">表示される問題と画像を見る</h3>
                         <p className="text-muted-foreground">
-                          様々なサイズのオブジェクトが画面に表示されます。じっくり観察して、そのサイズ感を確認しましょう。
+                          身の回りの一度は見たことがあるモノにまつわる問題と画像が表示されます！
                         </p>
                       </div>
                     </div>
@@ -85,9 +83,9 @@ export default function Home() {
                         2
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-lg font-bold text-foreground">サイズを予測する</h3>
+                        <h3 className="text-lg font-bold text-foreground">スケールを予測する</h3>
                         <p className="text-muted-foreground">
-                          オブジェクトの実際のサイズを頭の中で考えましょう。あなたの直感を信じて予測してください。
+                          画像のモノの重さやサイズを想像しましょう！
                         </p>
                       </div>
                     </div>
@@ -97,16 +95,16 @@ export default function Home() {
                         3
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-lg font-bold text-foreground">答えを選択する</h3>
+                        <h3 className="text-lg font-bold text-foreground">答えを入力する</h3>
                         <p className="text-muted-foreground">
-                          複数の選択肢から正しいサイズを選んでタップ！正解に近いほど高得点がもらえます。
+                          単位に注意しながら、直感で予想を回答欄に入力しましょう！  
                         </p>
                       </div>
                     </div>
 
                     <div className="pt-4 text-center">
                       <Link href="/play" className="max-w-xs">
-                        <Button className="transition-all duration-300 hover:scale-105 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 rounded-xl">
+                        <Button className="transition-all animate-bounce duration-300 hover:scale-105 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 rounded-xl">
                           さっそく始める
                         </Button>
                       </Link>
@@ -118,6 +116,6 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
-    </>
+    </div>
   );
 }
