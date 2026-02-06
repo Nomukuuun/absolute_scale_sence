@@ -10,7 +10,7 @@ export function Result() {
 
   return (
   <div className="flex flex-col items-center justify-center space-y-6">
-    <div>結果発表～～～～～～！！！！</div>
+    <div className="pt-8 md:pt-12">結果発表～～～～～～！！！！</div>
     <div>あなたはスケール感覚は…</div>
 
     {/* 評価を大きく表示 */}
