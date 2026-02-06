@@ -1,6 +1,6 @@
 // 状態管理
-import { PlayProvider } from './providers/PlayProvider'
-import { PlayFormProvider } from './providers/PlayFormProvider'
+import { PlayProvider } from '@/providers/PlayProvider'
+import { PlayFormProvider } from '@/providers/PlayFormProvider'
 // UIコンポーネント
 import ControllButtons from './_components/controll-buttons'
 import ProgressBar from './_components/progress-bar'

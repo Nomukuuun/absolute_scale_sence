@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import { useScore } from '@/app/ScoreProvider'
+import { useScore } from '@/providers/ScoreProvider'
 import { getResult } from '@/lib/result/get-result'
 
 export function Result() {

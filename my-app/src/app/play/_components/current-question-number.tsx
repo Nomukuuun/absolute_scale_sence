@@ -1,6 +1,6 @@
 'use client'
 
-import { usePlay } from '../providers/PlayProvider'
+import { usePlay } from '@/providers/PlayProvider'
 
 export function CurrentQuestionNumber() {
   const { currentIndex } = usePlay()

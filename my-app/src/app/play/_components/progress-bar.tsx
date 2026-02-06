@@ -1,6 +1,6 @@
 'use client'
 
-import { usePlay } from '../providers/PlayProvider'
+import { usePlay } from '@/providers/PlayProvider'
 import { Progress } from '@/components/ui/progress'
 
 export default function ProgressBar() {
