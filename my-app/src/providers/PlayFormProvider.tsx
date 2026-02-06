@@ -2,10 +2,10 @@
 
 import { useRouter, useParams } from 'next/navigation'
 import { usePlay } from './PlayProvider'
-import { useScore } from '@/app/ScoreProvider'
+import { useScore } from './ScoreProvider'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from '../schemas/play-form'
+import { answerFormSchema, AnswerFormInput, AnswerFormOutput } from '@/schemas/play-form'
 
 export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   // formの初期化（zodで型変換を行うため、変換前と変換後で型を定義）

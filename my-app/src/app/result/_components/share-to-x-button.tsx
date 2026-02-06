@@ -2,7 +2,7 @@
 
 import { TwitterShareButton, TwitterIcon } from 'next-share'
 import { useState, useMemo, useEffect } from 'react'
-import { useScore } from '@/app/ScoreProvider'
+import { useScore } from '@/providers/ScoreProvider'
 import { getResult } from '@/lib/result/get-result' 
 import type { ScoreRankLabel } from '@/lib/result/get-result' 
 import { ShareMessage } from '@/lib/result/share-message' 

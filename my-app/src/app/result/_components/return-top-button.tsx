@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useScore } from '@/app/ScoreProvider'
+import { useScore } from '@/providers/ScoreProvider'
 import { Button } from '@/components/ui/button'
 
 export function ReturnTopButton() {

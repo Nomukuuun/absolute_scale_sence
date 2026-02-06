@@ -1,7 +1,7 @@
 'use client'
 
 import { useFormContext } from 'react-hook-form'
-import { AnswerFormInput } from '@/app/play/schemas/play-form'
+import { AnswerFormInput } from '@/schemas/play-form'
 
 export function AnswerField({ unit }: { unit: string } ) {
   const { register, formState: { errors } } = useFormContext<AnswerFormInput>()
