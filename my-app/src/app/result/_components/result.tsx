@@ -10,14 +10,19 @@ export function Result() {
 
   return (
   <div className="flex flex-col items-center justify-center space-y-6">
-    <div className="pt-8 md:pt-12">結果発表～～～～～～！！！！</div>
+    <div className="italic pt-8 md:pt-12">結果発表～～～～～～！！！！</div>
     <div>あなたはスケール感覚は…</div>
 
     {/* 評価を大きく表示 */}
-    <div className="text-2xl font-bold">{result.label}</div>
+    <div className="text-xl md:text-2xl font-bold bg-white rounded-md p-4">{result.label}</div>
 
     {/* メッセージを改行区切りで表示 */}
     <div className="whitespace-pre-line">{result.message}</div>
+
+    {/* スコア表示 */}
+    <div className="font-bold">あなたのスコア: {score} 点</div>
+    <span className="text-sm text-gray-600">※ スコアが０に近いほど優れた感覚を持っています！</span>
+
   </div>
   )
 }
