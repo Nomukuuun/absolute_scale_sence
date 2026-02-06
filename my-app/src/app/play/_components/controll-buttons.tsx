@@ -4,7 +4,7 @@ import { useScore } from '@/providers/ScoreProvider'
 import { usePlay } from '@/providers/PlayProvider'
 import { useRouter } from 'next/navigation'
 import { useFormContext } from 'react-hook-form'
-import { AnswerFormInput } from '@/app/play/schemas/play-form'
+import { AnswerFormInput } from '@/schemas/play-form'
 import { Button } from '@/components/ui/button'
 
 export default function ControlButtons() {

@@ -1,7 +1,7 @@
 import { getQuestion } from "@/lib/play/get-question"
 import { notFound } from "next/navigation"
-import { AnswerField } from "./_components/answer-field"
 import { Suspense } from "react"
+import { AnswerField } from "./_components/answer-field"
 import { ImageSkeleton } from "./_components/image-skeleton"
 import { PixabayImage } from "./_components/pixabay-image"
 
