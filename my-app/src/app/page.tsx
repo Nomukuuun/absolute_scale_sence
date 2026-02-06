@@ -7,7 +7,7 @@ import { Ruler, Weight, Sparkles } from "lucide-react"
 export default function Home() {
   return (
     <div className="relative w-screen ml-[50%] -translate-x-[50%] min-h-screen bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/15">
-      <div className="absolute inset-0 pointer-events-none bg-[url('/colorful-geometric-pattern.png')] opacity-10 bg-cover bg-center" />
+      <div className="absolute inset-0 pointer-events-none bg-[url('/top-bg.png')] bg-scroll opacity-10 bg-cover bg-center" />
       {/* Hero Section */}
       <section>
         <div className="relative container mx-auto px-4 py-16 md:py-24">
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-8">
+      <section className="px-4 pb-16 md:pb-24">
         <Card className="max-w-3xl mx-auto border-2 border-primary/30 shadow-xl">
           <CardContent className="py-4 px-8">
             <Accordion type="single" collapsible className="w-full">
