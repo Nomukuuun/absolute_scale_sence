@@ -1,6 +1,5 @@
 import { getQuestion } from "@/lib/play/get-question"
 import { notFound } from "next/navigation"
-import { CurrentQuestionNumber } from "../_components/current-question-number"
 import { AnswerField } from "./_components/answer-field"
 import { Suspense } from "react"
 import { ImageSkeleton } from "./_components/image-skeleton"
@@ -19,7 +18,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ quest
       <Suspense fallback={<ImageSkeleton />}>
         <PixabayImage pixabayId={question.pixabay_id} />
       </Suspense>
-      <div className="flex space-x-6 py-6">
+      <div className="flex items-center space-x-6 py-6">
         <div className="basis-2/3 py-2">{question.target}の{question.scale}は？</div>
         <AnswerField unit={question.unit} />
       </div>
