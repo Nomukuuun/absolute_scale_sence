@@ -13,8 +13,10 @@ export function ReturnTopButton() {
   }
 
   return (
-    <Button onClick={initialize}>
-      トップへ戻る
-    </Button>
+    <div className="w-full pb-8 md:pb-12">
+      <Button onClick={initialize} className="w-full">
+        トップへ戻る
+      </Button>
+    </div>
   )
 }

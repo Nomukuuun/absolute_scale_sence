@@ -16,10 +16,10 @@ export function ScoreProvider({ children }: { children: React.ReactNode }) {
   const [score, setScore] = useState<number>(0)
   const calculateScore = useCallback((answer: number, questionId: string) => {
     // ユーザー入力は「10.」のように小数点を混じらせた回答ができてしまうため小数点以下を排除
-    const user_ans = Math.trunc(answer)
-    const correct_ans = Number(getAnswer(questionId) || "0")
+    const userAns = Math.trunc(answer)
+    const correctAns = Number(getAnswer(questionId) || "0")
     // 解答との乖離を絶対値で算出（最終スコア値が大きいほど、評価が低くなる）
-    setScore((v) => v + Math.abs(correct_ans - user_ans))
+    setScore((v) => v + Math.abs(correctAns - userAns))
   }, [])
   const resetScore = useCallback(() => setScore(0), [])
   useEffect(() => console.log('現在のscore:', score), [score])
