@@ -46,7 +46,7 @@ export default function Home() {
             <Link href="/play" className="max-w-md">
               <Button
                 size="lg"
-                className="text-xl md:text-2xl px-8 md:px-10 py-6 md:py-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                className="text-xl md:text-2xl px-8 md:px-10 py-6 md:py-8 hover:animate-spin rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
               >
                 <Sparkles className="size-6 mr-2 md:mr-4" />
                 プレイ
