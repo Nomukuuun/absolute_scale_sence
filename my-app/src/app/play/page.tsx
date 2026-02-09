@@ -1,10 +1,13 @@
-import { redirect } from 'next/navigation'
+'use client'
 
-// Full Route Cacheを無効にして動的処理を強制する
-export const dynamic = 'force-dynamic'
+import { usePlay } from '@/providers/PlayProvider'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function PlayIndexPage() {
-  const QUESTIONS_STOCKS = 10
-  const randomId = Math.floor(Math.random() * QUESTIONS_STOCKS + 1)
-  redirect(`/play/${randomId}`)
+  const router = useRouter()
+  const { displayQuestionNum } = usePlay()
+
+  // playの描画中にPlayProviderのStateを更新するため、副作用を抑制する
+  useEffect(() => router.replace(`/play/${displayQuestionNum}`), [displayQuestionNum]);
 }

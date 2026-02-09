@@ -18,11 +18,11 @@ export function ScoreProvider({ children }: { children: React.ReactNode }) {
     // ユーザー入力は「10.」のように小数点を混じらせた回答ができてしまうため小数点以下を排除
     const userAns = Math.trunc(answer)
     const correctAns = Number(getAnswer(questionId) || "0")
+    console.log("実際の解答：", correctAns)
     // 解答との乖離を絶対値で算出（最終スコア値が大きいほど、評価が低くなる）
     setScore((v) => v + Math.abs(correctAns - userAns))
   }, [])
   const resetScore = useCallback(() => setScore(0), [])
-  useEffect(() => console.log('現在のscore:', score), [score])
 
   return (
     <ScoreContext.Provider value={{ score, calculateScore, resetScore }}>
