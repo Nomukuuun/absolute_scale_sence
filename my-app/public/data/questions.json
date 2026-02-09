@@ -80,8 +80,8 @@
     "id": "8",
     "question": {
       "pixabay_id": "1201257",
-      "target": "トランプカード",
-      "scale": "縦の長さ",
+      "target": "トランプカードの長辺",
+      "scale": "長さ",
       "unit": "mm",
       "supplement": "世界標準とされるポーカーサイズで想像してください。"
     },
@@ -91,8 +91,8 @@
     "id": "9",
     "question": {
       "pixabay_id": "1201257",
-      "target": "トランプカード",
-      "scale": "横の長さ",
+      "target": "トランプカードの短辺",
+      "scale": "長さ",
       "unit": "mm",
       "supplement": "世界標準とされるポーカーサイズで想像してください。"
     },
