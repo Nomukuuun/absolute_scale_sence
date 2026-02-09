@@ -108,5 +108,148 @@
       "supplement": "単位に注意してください。"
     },
     "answer": "297"
+  },
+  {
+    "id": "11",
+    "question": {
+      "pixabay_id": "2918333",
+      "target": "名刺の長辺",
+      "scale": "長さ",
+      "unit": "mm",
+      "supplement": "一般的な４号名刺を想像してください。"
+    },
+    "answer": "91"
+  },
+  {
+    "id": "12",
+    "question": {
+      "pixabay_id": "2918333",
+      "target": "名刺の短辺",
+      "scale": "長さ",
+      "unit": "mm",
+      "supplement": "一般的な４号名刺を想像してください。"
+    },
+    "answer": "55"
+  },
+  {
+    "id": "13",
+    "question": {
+      "pixabay_id": "4909977",
+      "target": "単三電池",
+      "scale": "長さ（小数点以下切り捨て）",
+      "unit": "mm",
+      "supplement": "単位に注意してください。"
+    },
+    "answer": "50"
+  },
+  {
+    "id": "14",
+    "question": {
+      "pixabay_id": "1214419",
+      "target": "切手の長辺",
+      "scale": "長さ（小数点以下切り捨て）",
+      "unit": "mm",
+      "supplement": "日本の一般的なものを想像してください。"
+    },
+    "answer": "22"
+  },
+  {
+    "id": "15",
+    "question": {
+      "pixabay_id": "1214419",
+      "target": "切手の短辺",
+      "scale": "長さ（小数点以下切り捨て）",
+      "unit": "mm",
+      "supplement": "日本の一般的なものを想像してください。"
+    },
+    "answer": "18"
+  },
+  {
+    "id": "16",
+    "question": {
+      "pixabay_id": "2003576",
+      "target": "箱ティッシュの最大辺",
+      "scale": "長さ",
+      "unit": "cm",
+      "supplement": "日本の一般的なものを想像してください。"
+    },
+    "answer": "23"
+  },
+  {
+    "id": "17",
+    "question": {
+      "pixabay_id": "4937479",
+      "target": "トイレットペーパー",
+      "scale": "紙幅",
+      "unit": "mm",
+      "supplement": "日本JIS規格適合品とします。"
+    },
+    "answer": "114"
+  },
+  {
+    "id": "18",
+    "question": {
+      "pixabay_id": "1239214",
+      "target": "トイレットペーパーの芯",
+      "scale": "直径",
+      "unit": "mm",
+      "supplement": "日本JIS規格適合品とします。"
+    },
+    "answer": "38"
+  },
+  {
+    "id": "19",
+    "question": {
+      "pixabay_id": "2202226",
+      "target": "HDMI端子",
+      "scale": "横幅（小数点以下切り上げ）",
+      "unit": "mm",
+      "supplement": "ミニやマイクロでなく、標準のタイプＡを想像してください。"
+    },
+    "answer": "14"
+  },
+  {
+    "id": "20",
+    "question": {
+      "pixabay_id": "1544422",
+      "target": "東京タワー",
+      "scale": "高さ",
+      "unit": "m",
+      "supplement": "スカイツリーじゃない方です。"
+    },
+    "answer": "333"
+  },
+  {
+    "id": "21",
+    "question": {
+      "pixabay_id": "1670937",
+      "target": "東京都庁",
+      "scale": "高さ（小数点以下切り捨て）",
+      "unit": "m",
+      "supplement": "ツインタワーの第一庁舎を想像してください。"
+    },
+    "answer": "243"
+  },
+  {
+    "id": "22",
+    "question": {
+      "pixabay_id": "220929",
+      "target": "レインボーブリッジ",
+      "scale": "全長",
+      "unit": "m",
+      "supplement": "実際はレインボーじゃないです。"
+    },
+    "answer": "798"
+  },
+  {
+    "id": "23",
+    "question": {
+      "pixabay_id": "5719067",
+      "target": "通天閣",
+      "scale": "高さ",
+      "unit": "m",
+      "supplement": "串カツ１００円は安い。"
+    },
+    "answer": "108"
   }
 ]
