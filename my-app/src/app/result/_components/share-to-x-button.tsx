@@ -25,7 +25,7 @@ export function ShareToXButton() {
   const label: ScoreRankLabel = useMemo(() => getResult(score).label, [score])
   const shareText = useMemo(
     () => {
-      return `私の絶対スケール感は「${label}」でした！\n${ShareMessage[label]}\nあなたのスケール感を調べてみよう！`
+      return `私のスケール感覚は「${label}」でした！\n${ShareMessage[label]}\nあなたのスケール感覚を調べてみよう！`
     }, [label])
 
   return (
