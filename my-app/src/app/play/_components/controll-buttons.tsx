@@ -1,19 +1,19 @@
 'use client'
 
-import { useScore } from '@/providers/ScoreProvider'
-import { usePlay } from '@/providers/PlayProvider'
-import { useRouter } from 'next/navigation'
 import { useFormContext } from 'react-hook-form'
+import { usePlay } from '@/providers/PlayProvider'
+import { useScore } from '@/providers/ScoreProvider'
+import { useRouter } from 'next/navigation'
 import { AnswerFormInput } from '@/schemas/play-form'
 import { Button } from '@/components/ui/button'
 
 export default function ControlButtons() {
   const { formState: { isDirty, isValid } } = useFormContext<AnswerFormInput>()
-
   const { isLast } = usePlay()
-
-  const router = useRouter()
   const { resetScore } = useScore()
+  const router = useRouter()
+
+  // プレイ状態はルートへ遷移することによりライフサイクル的にリセットされる
   const redirectToTop = () => { 
     router.replace('/')
     resetScore()
