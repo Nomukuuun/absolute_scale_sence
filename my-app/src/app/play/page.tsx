@@ -6,9 +6,8 @@ import { useEffect } from 'react'
 
 export default function PlayIndexPage() {
   const router = useRouter()
-  const { displayQuestionIds, displayQuestionNum } = usePlay()
-  const questionId = displayQuestionNum
+  const { displayQuestionNum } = usePlay()
 
-  useEffect(() => console.log("現在の表示済み問題一覧：", displayQuestionIds), [displayQuestionIds]);
-  router.replace(`/play/${questionId}`)
+  // playの描画中にPlayProviderのStateを更新するため、副作用を抑制する
+  useEffect(() => router.replace(`/play/${displayQuestionNum}`), [displayQuestionNum]);
 }

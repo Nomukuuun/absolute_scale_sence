@@ -24,19 +24,16 @@ export function PlayFormProvider({ children }: { children: React.ReactNode }) {
   // submit時に使用する状態
   const { questionId } = useParams<{ questionId: string }>()
   const { isLast, next } = usePlay()
-  const { score, calculateScore } = useScore()
+  const { calculateScore } = useScore()
   const router = useRouter()
 
   const onSubmit = (data: AnswerFormOutput) => {
     // バリデーションを通過していることが確実であるため、answerの型からundefinedを無視する
     const answer = data.answer!
-    console.log('answer:', data.answer)
-    console.log('questionId:', questionId)
+    console.log('あなたの回答:', data.answer)
     calculateScore(answer, questionId) // ユーザー回答と解答の乖離幅を算出
     next()          // 回答問題数をインクリメント
     methods.reset() // フォーム状態をリセット
-    console.log('更新前score:', score)
-    console.log('isLast:', isLast)
     if (isLast) {
       router.replace('/result')
     } else {

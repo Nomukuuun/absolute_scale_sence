@@ -1,14 +1,13 @@
 'use client'
 
 import questions from "@/../public/data/questions.json"
-import { createContext, useContext, useState, useCallback, useMemo } from 'react'
+import { createContext, useContext, useState, useCallback, useMemo, useEffect } from 'react'
 
 type PlayContextType = {
   currentIndex: number
   totalQuestions: number
   isLast: boolean
   next: () => void
-  displayQuestionIds: number[] // NOTE: テスト用に追加
   displayQuestionNum: number
 }
 
@@ -40,10 +39,11 @@ export function PlayProvider({ children }: { children: React.ReactNode }) {
 
   // 表示する問題に関するState（更新を要さず、ライフサイクル中は維持するため更新変数未定義）
   const [displayQuestionIds] = useState<number[]>(generateRandomQuestionIds(totalQuestions))
+  useEffect(() => console.log("出題：", displayQuestionIds), [displayQuestionIds])
   const displayQuestionNum = useMemo(() => displayQuestionIds[currentIndex - 1], [currentIndex])
 
   return (
-    <PlayContext.Provider value={{ currentIndex, totalQuestions, isLast, next, displayQuestionIds, displayQuestionNum }}>
+    <PlayContext.Provider value={{ currentIndex, totalQuestions, isLast, next, displayQuestionNum }}>
       {children}
     </PlayContext.Provider>
   )
